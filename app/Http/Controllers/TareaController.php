@@ -7,59 +7,44 @@ use Illuminate\Http\Request;
 
 class TareaController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
+
     public function index()
     {
-        //
+        $tarea['tareas']=tarea::all();
+        return view('index', $tarea);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
     public function create()
     {
         //
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(Request $request)
     {
-        //
+        $tarea=request()->all();
+        tarea::create($tarea);
+        return redirect('/')->with('Listo, Tarea creada!');
     }
 
-    /**
-     * Display the specified resource.
-     */
     public function show(tarea $tarea)
     {
         //
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
     public function edit(tarea $tarea)
     {
         //
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
     public function update(Request $request, tarea $tarea)
     {
         //
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(tarea $tarea)
+    public function destroy($id)
     {
-        //
+        $tarea = Tarea::findOrFail($id);
+        $tarea->delete();
+        return redirect('/');
     }
 }

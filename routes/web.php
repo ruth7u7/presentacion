@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\TareaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +14,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [TareaController::class, 'index']);
+Route::post('/', [TareaController::class, 'store']);
+Route::delete('/{id}', [TareaController::class, 'destroy'])->name('tarea.destroy');
