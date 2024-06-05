@@ -3,20 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+
     <title>Hola</title>
 </head>
 <body>
-    <form action="{{ url('/') }}" method="post">
+    <form action="{{ url('/') }}" method="post" style="padding-left:45%; padding-top:200px">
         @csrf
         <input type="text" name="tarea" id="tarea">
         <input type="submit" value="Agregar tarea">
     </form>
 
-    <table>
+    <table style="border: 1; padding-left:45%">
         <tr>
             <td>Tareas </td>
-            <td>Accion</td>
+            <td>Acción</td>
         </tr>
 
         @foreach($tareas as $tarea)
