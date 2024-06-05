@@ -13,7 +13,8 @@
         <input type="submit" value="Agregar tarea">
     </form>
 
-    <table style="border: 1; padding-left:45%">
+    <!-- <table style="border: 1; padding-left:45%"> -->
+        <table class="tarea">
         <tr>
             <td>Tareas </td>
             <td>Acción</td>
